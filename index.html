@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+<html lang="en-US"> 
+<head>
+ <meta name="viewport" content="width=device-width initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+<title> Superior Auto Body </title>
+<style>
+ * {
+ box-sizing: border-box;
+}
+h1 {
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+    font-size:200%;
+} 
+#address { 
+  color:white;
+  width:100%;
+  font-family:Verdana;
+  text-align:center;
+  border: px solid black;
+  padding: 6px;
+ /* border-image: url(https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0309/8886/rrrmaryland-flag-true-color_shop_preview.jpg) 15 round; */
+  background: url(https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0309/8886/rrrmaryland-flag-true-color_shop_preview.jpg);
+  font-weight: bold;
+  margin-top: -10px;
+  
+}
+h3 {
+  color: gray;
+  text-align: center;
+  font-family:'Open Sans', sans-serif;
+  margin-left:0px;
+  font-size:200%;
+  
+}
+ol {
+  text-align:center;
+}
+
+/*body {
+  background-color:hsl(0,75%, 45%);*/
+}
+
+
+
+#myheader {
+  color: white;
+  text-align: center;
+  padding-left:150px;
+  
+}
+ 
+
+ 
+#borderimg { 
+  border: 10px solid transparent;
+  padding: 15px;
+  border-image: url(https://www.bit-101.com/blog/wp-content/uploads/2019/01/filled.png) 30 round;
+}
+.button-card  {
+ 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  background-color: #f1f1f1;
+  
+}
+
+.button a {
+  background-color: rgba(255, 0, 0, 0.6);
+  float: left;
+  outline: none;
+  cursor: pointer;
+  padding: 20px;
+  width:250px;
+  height:75px;
+  transition: all 0.3s; 
+  font-size: 24px;
+  color: #FFFFFF;
+  margin:  .5px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  text-align: center;
+  text-decoration:none;
+  font-family:Helvetica;
+  border-style:solid;
+  border-color:hsl(0, 80%, 50%) ;
+  border-width:1px;
+  
+  
+ /* border-radius: 15px; */
+  
+  
+}
+ .button a {
+  cursor: pointer;
+  position: relative; 
+ 
+}
+
+.button a:active {
+  background-color: #ccc;
+  transform: translateY(4px); 
+  
+}
+.tabcontent {
+  display: none;
+  border-top: none;
+  border-right:none;
+}
+ .button a:after {
+  content: '\00bb';
+  position: absolute; /* this changed position of arrows closer to words*/
+  opacity: 0;
+  top: 5px;
+  right: -10px;
+  transition: 0.3s;
+  
+}
+ .button a:hover {
+  background-color: rgba(168,168,168, 0.6);
+  padding-right: 24px;
+  padding-left:10px;
+  opacity: 1;
+  color: white;
+}
+
+.column {       /* columns for each page*/
+  float:left;
+  width:45%;
+  padding:5px;
+  height: 700px;
+  margin: 15px;
+  margin-top:25px;
+  padding-left:5px;
+  background-color:white;
+  margin-left:30px;
+  overflow:hidden;
+   box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.5);
+  
+  
+}
+.row {
+  content:"";
+
+}
+.row {margin: 0 -5px;}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-align: left;
+  background-color: #f1f1f1;
+  overflow:hidden;
+  
+}
+
+.ltw {
+  margin: 2px;
+  margin-right: auto;
+  margin-left:111px;
+  width:55%;
+  height:220px;
+  margin-top:-10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px grey; 
+  transition: all .4s ease;
+  
+}
+.op {
+  width:88%;
+  height:270px;
+  margin-left: 32px;
+  border-style: solid;
+  border-width:2px;
+  border-color:white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px grey;
+  transition: all .4s ease;
+  
+}
+
+.ltw:hover{
+  height:220px;
+   box-shadow: 0 0px 7px 0 rgba(0,0,0,0.24), 3px 3px 3px 3px rgba(0,0,0,0.19);
+     -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+  
+  
+}
+
+.op:hover {
+  height:270px;
+  box-shadow: 0 0px 7px 0 rgba(0,0,0,0.24), 3px 3px 3px 2px rgba(0,0,0,0.19);
+    -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05);
+  
+}
+
+  * {box-sizing: border-box}
+    
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+  
+img {vertical-align: middle;}
+  
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 89.5%; 
+  overflow:hidden;
+  margin: auto;
+  border-style:solid;
+  border-color:white ;
+  border-width:1px;
+  margin-right:0px;
+
+}
+
+a {
+  text-decoration:none;
+  color: gray;
+  
+}
+
+a:hover {
+
+  color:rgba(225, 99, 71, 0.6);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: 20px;
+  margin-left: 0px;
+  color: gray;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  vertical-align:middle;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(225,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: justify;
+  
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-bottom: 25px; 
+  margin-top:-30px;
+ 
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+p {
+  color:gray;
+  font-family:Helvetica;
+  text-align:left;
+  font-size:14px;
+  margin:1px;
+}
+
+#img2 { /* HEAD PICTURE FOR SUPERIOR*/
+  padding-left:250px;
+  width:80%;
+  margin-bottom:px;
+}
+
+
+/*NAVIGATION LIST*/
+/* ul {
+  list-style-type: none;               
+  margin-top: 5px;
+  overflow: hidden;   
+  background-color: #cccccc; 
+  box-sizing: border-box;
+  margin: -10px 0px;
+  font-size:12px;
+  width:100%; 
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  z-index:9;
+}
+
+
+li a {
+  float: right;
+ 
+}
+
+li a {
+  display: block;
+  color: red;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  margin-right:-1px;
+  width:125px;
+ height: 40px;
+  font-family: 'Open Sans', sans-serif;
+  
+}
+
+li a:hover {                    
+  background-color: rgba(77,77,77,1);
+  border-top: 3px solid;
+  border-color:#ff1a1a;
+  margin-right:-1px;
+  color: white;
+ 
+}*/ /*RED BAR ABOVE BUTTONS*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size:14px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0px;
+  z-index:9;
+  
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  height:45px;
+  width:125px;
+  margin-right:-1px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+li a:hover {
+  background-color: rgba(77,77,77,1);
+  border-top: 3px solid;
+  border-color:#ff1a1a;
+  margin-right:-1px;
+  color: red;
+}
+
+.active {
+  background-color: rgba(77,77,77,1);
+}
+
+html { 
+  background: url("https://i.pinimg.com/originals/95/ee/86/95ee8696f8ed1abb3767928c4d0daf65.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/*body { 
+  background-image:url("https://i.pinimg.com/originals/95/ee/86/95ee8696f8ed1abb3767928c4d0daf65.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+ 
+}*/
+header {
+  background :-webkit-linear-gradient(bottom, #f1f1f1 73% , rgba(77,77,77,1) 20%) ;        
+  padding: 0px 0px;             
+  margin: 0px 0px;
+  margin-right:-1px;
+  margin-left: 1px;
+  margin-bottom:10px;
+
+
+}
+nav {
+  background: url(https://www.dodge.com/content/dam/fca-brands/na/dodge/en_us/2019/challenger/gallery/exterior/2019-challenger-gallery-srt-hellcat-red-eye-1.jpg.image.1440.jpg) top left no-repeat;
+  background-size: 550px 350px; 
+  background-color: #ccc;
+  width: 250px;
+  margin-left:0 px;
+  float:left;
+  margin-top:0px;
+
+}
+
+section{
+  margin:0px;
+  margin-top:px;
+  margin-left:150px;
+  
+  
+}
+
+article {
+  float: left;
+  padding: 0px;
+  width: 100%;
+  height:100%;
+  background-color: #f1f1f1;
+  
+  
+}
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+  background:#777;
+ 
+}
+
+
+#footer{
+	background-color:#777;
+	color: white;
+	width:100%;
+	height:400px;
+	clear:both;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+  padding: 10px;
+  font-family:'Open Sans', sans-serif;
+  
+
+}
+
+.wrapper{
+	clear:both;
+	position: relative;
+	overflow: hidden;
+	color:white;   
+
+}
+
+.left {
+
+width:30%;
+text-align:left;
+float:left;
+display: inline-block;
+color: white;
+font-size:12px;
+border-color: hsla(360, 5%, 65%, .6);
+border-style:solid;
+border-width:1px;
+border-top: none;
+border-left: none;
+border-bottom: none ;
+margin-top:30px;
+font-family: 'Open Sans', sans-serif;
+margin-left:15px;
+
+}
+.footer-font {
+  color:white;
+}
+.footer-font:hover{
+  color:rgba(225, 99, 71, 0.6);
+}
+.right{
+height:285px;
+width:20%;
+float:left;
+text-align:left;
+font-size: 12px;
+display: inline-block;
+border-color: hsla(360, 5%, 65%, .6);
+border-style:solid;
+border-width:1px;
+border-top: none;
+border-left: none;
+border-bottom: none ;
+margin-top:30px;
+font-family: 'Open Sans', sans-serif;
+line-height:20px;
+margin-left: 15px;
+
+
+}
+
+.centered{
+height:285px;
+width:25%;
+overflow: hidden;
+display: inline-block;
+text-align:left;
+font-size:12px;
+border-color: hsla(360, 5%, 65%, .6);
+border-style:solid;
+border-width:1px;
+border-top: none;
+border-left: none;
+border-bottom: none ;
+margin-top:31px;
+margin-left: 15px;
+font-family: 'Open Sans', sans-serif;
+}
+
+
+hr.new2 {
+  margin-left:0;
+  margin-right: 10%;
+  border-color: hsla(360, 5%, 65%, .6);
+  border-width: .5px;
+  margin-top: 5px;
+  margin-bottom:15px;
+}
+
+hr.new1 {
+  margin-left:0;
+  margin-right: %;
+  border-color: hsla(360, 5%, 65%, .6);
+  border-width: .5px;
+  margin-top: 5px;
+  margin-bottom:5px;
+}
+
+span {
+  font-size:12px;
+  margin-right:3px;
+}
+
+
+
+.fa{
+  padding:15px;
+  font-size:14px;
+  text-align:center;
+  text-decoration: none;
+  border-radius:10%;
+  margin: 2px 2px;
+  width:45px;
+
+}
+.ha {
+  float:right;
+  
+ 
+}
+/*.ha:hover{
+
+  border-top: 1px solid;
+  border-color:#ff1a1a;
+  
+}*/
+.fa:hover {
+  color: gray;
+  opacity: .8;
+  
+}
+.fa-facebook{
+  background: hsla(0, 100%, 50%, 0.7);
+  color: white;
+}
+.fa-twitter {
+  background: hsla(0, 100%, 50%, 0.7);
+  color:white;
+}
+.fa-linkedin {
+  background: hsla(0, 100%, 50%, 0.7);
+  color:white;
+}
+
+.fa-instagram {
+  background: hsla(0, 100%, 50%, 0.7);
+  color:white;
+}
+
+
+#container {
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  width: 1124px
+ 
+}
+
+#main {
+ 
+
+}
+
+#gambrills {
+  text-align:center;
+ 
+ .column.side, .column.middle {
+    width: 100%;
+  }
+  
+@media  (max-width: 1024px) and (min-width:600px) { /* put any CSS before this because stuff put before it has not been working */
+}
+</style>
+</head>
+<body>
+ 
+<div id="container">
+  <div id="main">
+<header id="myheader">      
+<div class="ha">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-instagram"></a> 
+      
+      </div>  
+      <br>
+      <br>
+      <br>
+  
+<a href="https://fontmeme.com/futuristic-fonts/"><img id="img2" src="https://fontmeme.com/permalink/190701/5ff3529c824885b37df72d4029d8e9c1.png" alt="futuristic-fonts" border="0" width="600px" height="80px" align="middle" ></a>
+<!--<a href="/" id="myheader" style="width:20%">Superior Auto Body</a>
+<h1 a href="/" title="Shop name" id="myheader">Superior Auto Body</h1>-->
+
+     <p style="color:gray;background-color:#f1f1f1;margin:10px; margin-left:10px; padding: 10px 10px; margin-top: -10pxpx" id="gambrills" ><i>Gambrills, MD</i></p>  
+
+
+
+</header>
+
+  <p id="address"></p>
+<article>
+
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#ourprocess">Our Process</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+    <li><a href="#aboutus">About Us</a></li>
+  </ul>
+  
+<nav class="button-card">
+  
+  <div class="button">
+  <a class="button" href="https://run.plnkr.co/OJ2do9RRHJT5LGfu/" target="_blank">Get Estimate</a> <!--change to _self later but leave on blank for referencing -->
+  <a href="" target="_blank">About us</a>
+  <a href="" target="_blank">Our Process</a>
+  <a href="" target="_blank">Contact Us</a>
+ </div>  
+
+ </nav>
+  
+  
+<section>
+
+
+  <div class="slideshow-container" > 
+
+
+    <div class="mySlides fade" style="height:481px">
+        <div class="numbertext">1/3</div>
+        <img src="https://cdn.businessyab.com/assets/uploads/844dea8901e58e3a8a355db99cca7170__united_states_maryland_anne_arundel_county_hanover_gambrills_superior_auto_bodyhtml.jpg" style="width:100%; height:500px" >
+        <div class="text"> Caption this </div>
+    </div>
+    <div class="mySlides fade" style="height:481px">
+      <div class="numbertext">2/3</div>
+      <img src="https://cdn.businessyab.com/assets/uploads/cf14a4c9faa149f7d4ddc76b80fdebce__united_states_maryland_anne_arundel_county_hanover_gambrills_superior_auto_bodyhtml.jpg" style="width:100%; height:500px" >
+      <div class="text"> Caption Two</div>
+    </div>
+  <div class="mySlides fade" style="height:481px">
+      <div class="numbertext">3/3</div>
+      <img src="https://cdn.businessyab.com/assets/uploads/cb6aee7ef44bb12031006516ddda5dd5__united_states_maryland_anne_arundel_county_hanover_gambrills_superior_auto_bodyhtml.jpg" style="width:100%; height:500px" >
+      <div class="text"> Caption Three</div>
+     </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>   <!-- Next and previous buttons -->
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  </div> <!--container slideshow -->
+
+
+   </section>  
+    
+ <script>
+
+var slideIndex = 1;
+
+var myTimer;
+
+window.addEventListener("load",function() {
+    showSlides(slideIndex);
+    myTimer = setInterval(function(){plusSlides(1)}, 4000);
+})
+
+
+
+// NEXT AND PREVIOUS CONTROL
+function plusSlides(n){
+  clearInterval(myTimer);
+  if (n < 0){
+    showSlides(slideIndex -= 1);
+  } else {
+   showSlides(slideIndex += 1); 
+  }
+  if (n === -1){
+    myTimer = setInterval(function(){plusSlides(n + 2)}, 4000);
+  } else {
+    myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  }
+}
+
+//Controls the current slide and resets interval if needed
+function currentSlide(n){
+  clearInterval(myTimer);
+  myTimer = setInterval(function(){plusSlides(n + 1)}, 4000);
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+ 
+}
+
+</script>
+
+<div class="column" >
+  <h3 style="color;" >Lifetime Warranty</h3>
+  <a href="https://www.w3schools.com/html/html_images.asp"> <!-- WILL CHANGE LINK TO WARRANTY PAGE WHEN FINISHED -->
+  <img class="ltw" src="https://cdn-tp2.mozu.com/11870-m1/cms/files/f71e35b8-7b15-43dc-8eef-7b4130d1de4f" >
+  </a>
+  <br>
+  <br>
+
+  <p>Superior Auto Body takes great care to ensure that every repair meets or exceeds industry standards of quality. We offer a Lifetime Warranty on repairs. This includes labor and paint (water-based paint and clear coat).
+  All parts come with the manufacturers’ guarantee.</p>
+  <br>
+  <p style="color:red">If you are unhappy for any reason, call us or come in. Our reputation has been built by providing the highest level of service, one customer at a time. <a href src="https://run.plnkr.co/XaUAKCooKxF4eLTK/" target="_blank" id="mbtm">read more</a></p>
+  
+</div>
+  <div class="column">
+    <h3 style="color;" >Our Process</h3>
+    <a href="https://cdn.businessyab.com/assets/uploads/2035f50e1cd1127e2746b7706df26e81__united_states_maryland_anne_arundel_county_hanover_gambrills_superior_auto_bodyhtml.jpg"></a>
+    <img class="op" src="http://i0.wp.com/www.texasautobarn.com/wp-content/uploads/2016/05/collision-repair-process-01.jpg" >  
+   <br>
+   <br>
+   <p>We understand the trauma and inconvenience of being involved in an accident and losing the use of your vehicle... <a href src="https://run.plnkr.co/XaUAKCooKxF4eLTK/" target="_blank" id="mbtm">read more</a></p> 
+ </div>
+</article>  
+</div> <!-- div id main container -->
+ <!-- container div -->
+
+<footer id="footer">
+  <div id="wrapper">
+    <div class="left">
+        <div> PAGES</div>
+     <br>
+     <br>
+        <div><a href src="" class="footer-font"> <span>&#62;</span> Home</a></div>
+        <br>
+        <hr class="new2">
+        <div><a href src="" class="footer-font"> <span>&#62;</span> Get Estimate</a></div>
+        <br>
+        <hr class="new2">
+        <div><a href src="" class="footer-font"> <span>&#62;</span> About Us</a></div>
+        <br>
+        <hr class="new2">
+        <div><a href src="" class="footer-font"> <span>&#62;</span> Our Process</a></div>
+        <br>
+        <hr class="new2">
+        <div><a href src="" class="footer-font"> <span>&#62;</span> Contact Us</a></div>
+        <br>
+        <hr class="new2">
+     
+  
+    </div>
+    <div class="centered">
+      <div>FOLLOW US</div>
+      <br>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      </div>
+    <div class="right" >
+      <div>LOCATION</div> 
+      <br>
+      <div>758 RT 3 North<br> Gambrills, MD<br> 21054</div>
+      <br>
+      <div>Contact Us:<br>
+      CALL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  : 410-923-0505<br>
+      EMAIL: superiorab@gmail.com
+      </div>
+    </div>
+
+
+   </div>
+   <br>
+   <br>
+   <hr class="new1">
+   <div style="font-size:10px">Created by: Dominic Guaragna</div>
+  </footer>
+</div>
+
+</body>
+
+
+
+
+
+
+</html>
